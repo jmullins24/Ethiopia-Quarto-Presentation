@@ -23,7 +23,7 @@ These visualizations were used in their annual presentation to hospital donors a
 
 <p align="center">
 Quarto Presentation Title Page in the .html file: <br/>
-<img src="https://i.imgur.com/Bx6yVOQ.jpeg" height="80%" width="80%" alt="Title Page"/>
+<img src="https://github.com/user-attachments/assets/c2724cf7-ba08-41be-8c9a-ca243870ebe9" height="80%" width="80%" alt="Title Page"/>
 <br />
 <br />
 By system category, what are the causes of death in Ethiopia over time:  <br/>
