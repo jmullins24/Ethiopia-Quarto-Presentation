@@ -26,7 +26,8 @@ Quarto Presentation Title Page in the .html file: <br/>
 <br />
 <br />
 By system category, what are the causes of death in Ethiopia over time:  <br/>
-<img src="[https://imgur.com/a/GrrePRX](https://imgur.com/IsHWM7K)" height="80%" width="80%" alt="Animation of Causes of Death in Ethiopia"/>
+<img src="![ethiopia_deaths](https://github.com/user-attachments/assets/c59c5056-1d91-43d5-a1e2-d90964e8e3ef)
+" height="80%" width="80%" alt="Animation of Causes of Death in Ethiopia"/>
 <br />
 <br />  
 Individual Performance Indicators - All graphs calculated based on Employee name field:  <br/>
