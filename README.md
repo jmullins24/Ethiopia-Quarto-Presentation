@@ -27,7 +27,7 @@ Quarto Presentation Title Page in the .html file: <br/>
 <br />
 <br />
 By system category, what are the causes of death in Ethiopia over time:  <br/>
-[ethiopia_deaths](https://github.com/user-attachments/assets/c59c5056-1d91-43d5-a1e2-d90964e8e3ef)
+<img src="https://github.com/user-attachments/assets/c59c5056-1d91-43d5-a1e2-d90964e8e3ef" height="80%" width="80%" alt="LO Dashboard"/>
 
 <br />
 <br />  
