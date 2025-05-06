@@ -26,7 +26,7 @@ Quarto Presentation Title Page in the .html file: <br/>
 <br />
 <br />
 Code Behind the Dashboard referencing the database tab - all field change with the date selection:  <br/>
-<img src="https://i.imgur.com/JbTGp1H.jpeg" height="80%" width="80%" alt="Calculations in Excel"/>
+<img src="https://imgur.com/a/GrrePRX" height="80%" width="80%" alt="Calculations in Excel"/>
 <br />
 <br />  
 Individual Performance Indicators - All graphs calculated based on Employee name field:  <br/>
