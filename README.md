@@ -19,7 +19,7 @@ These visualizations were used in their annual presentation to hospital donors a
 - <b>Tableau</b>
 
 <h2>Walk-through:</h2>
-![ethiopia_deaths](https://github.com/user-attachments/assets/17ceb87b-e7e1-4700-8355-5f42732973f8)
+
 
 <p align="center">
 Quarto Presentation Title Page in the .html file: <br/>
@@ -27,8 +27,8 @@ Quarto Presentation Title Page in the .html file: <br/>
 <br />
 <br />
 By system category, what are the causes of death in Ethiopia over time:  <br/>
-<img src="![ethiopia_deaths](https://github.com/user-attachments/assets/c59c5056-1d91-43d5-a1e2-d90964e8e3ef)
-" height="80%" width="80%" alt="Animation of Causes of Death in Ethiopia"/>
+[ethiopia_deaths](https://github.com/user-attachments/assets/c59c5056-1d91-43d5-a1e2-d90964e8e3ef)
+
 <br />
 <br />  
 Individual Performance Indicators - All graphs calculated based on Employee name field:  <br/>
