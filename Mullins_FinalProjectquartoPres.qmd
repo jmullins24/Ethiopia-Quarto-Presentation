@@ -1,0 +1,205 @@
+---
+title: "Project Adopt a Village - Sendafa, Ethiopia"
+author: "Jacob Mullins"
+format: 
+  revealjs:
+    embed-resources: true
+    footer: "Data Visualization | Johns Hopkins University"
+    theme: moon
+    preview-links: true
+    transition: slide
+    transition-speed: default
+    
+editor: visual
+---
+
+## Friends of PAAV - Sendafa, Ethiopia Medical Missions
+
+Disease Burden and Mortality Trends in Ethiopia
+
+::: incremental
+
+-   Friends of PAAV (“PAAV”) sent me datasets from 2023 and 2024 medical mission trips to Sendafa, Ethiopia for data visualization, insights, and analysis. 
+
+-   I gathered and cleaned data from two primary sources: the patient data from PAAV and global health statistics from the World Health Organization (WHO).
+
+
+-   I completed a comparative analysis of local disease patterns against broader mortality and disease trends in Ethiopia and the surrounding region. (Since this was real project, here is the actual Tableau Dashboard I submitted to the team for review in March [My Tableau Public Dashboard – Ethiopia & World Data](https://public.tableau.com/views/ETHWorkbook3_3_25/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link) )
+:::
+
+## Contents
+
+-   Systems Treated versus Death Rate
+-   Diagnoses Treated
+-   Dashboard: Age groups of patients treated
+-   OBGYN deaths worldwide (Shiny app)
+-   Ethiopia death rates by system (animation)
+-   Ethiopia systems treated by gender
+
+## Systems Treated versus Death Rate
+
+Are they saving lives?
+
+```{r}
+#| echo: false
+#| fig-align: center
+#| fig-width: 6         
+#| fig-height: 4       
+#| out.width: "100%"    
+
+library(ggplot2)
+library(dplyr)
+library(readr)
+library(RColorBrewer)
+library(plotly)
+
+who_df <- read_csv("WHO_Death_System ETH.csv")
+eth_df <- read_csv("ETH2324.csv")
+
+
+who_summary <- who_df %>%
+  filter(Year == 2020) %>%  
+    group_by(System) %>%
+    summarise(Value = sum(Death_Rate_per_100K, na.rm = TRUE),
+              Source = "WHO_Death_Rate")
+
+eth_summary <- eth_df %>%
+    group_by(System) %>%
+    summarise(
+        Value  = n(),                       
+        Source = "ETH_Observations"
+    )
+
+combined_df <- bind_rows(who_summary, eth_summary)
+
+
+p <- ggplot(combined_df, aes(x = System, y = Value,
+                        fill  = System,
+                        alpha = Source)) +
+  geom_bar(stat     = "identity",
+           position = position_dodge(width = 0.9),
+           width    = 0.8) +
+
+  # 15 colors for Systems
+  scale_fill_manual(
+    values = colorRampPalette(brewer.pal(8, "Set2"))(15),
+    guide  = "none"
+  ) +
+
+  scale_alpha_manual(
+    name   = "Data Source",
+    labels = c(
+      WHO_Death_Rate   = "WHO Death Rate",
+      ETH_Observations = "Ethiopia Observations"
+    ),
+    values = c(
+      WHO_Death_Rate   = 1.0,  
+      ETH_Observations = 0.5  
+    ),
+    # override fill in legend so both keys look the same color
+    guide  = guide_legend(
+      override.aes = list(fill = "grey40")
+    )
+  ) +
+
+  labs(
+    x     = "System",
+    y     = "Sum",
+    title = "WHO Death Rate vs Ethiopia Observations by System"
+  ) +
+  theme_minimal()
+
+
+ggplotly(p) %>%
+  layout(
+    showlegend = FALSE,
+    dragmode = "zoom")
+
+```
+
+## Diagnosis Treated
+
+```{r}
+#| echo: false
+#| fig-align: center
+#| fig-width: 6         
+#| fig-height: 4       
+#| out.width: "100%"   
+
+library(dplyr)
+library(ggplot2)
+library(plotly)
+
+df_plot <- readr::read_csv("ETH2324.csv") %>%
+    filter(year %in% c(2023, 2024)) %>%
+    count(year, Disease, name = "Count")
+
+top25 <- df_plot %>%
+    group_by(Disease) %>%
+    summarise(Total = sum(Count), .groups = "drop") %>%
+    arrange(desc(Total)) %>%
+    slice_head(n = 25) %>%
+    pull(Disease)
+
+df_top25 <- df_plot %>%
+    filter(Disease %in% top25) %>%
+    mutate(Disease = factor(Disease, levels = top25))
+
+p <- ggplot(df_top25, aes(x = Disease, y = Count, fill = factor(year))) +
+    geom_col(position = position_dodge(width = 0.8), width = 0.7) +
+    labs(
+        title =    "Top 25 Diseases Treated: 2023 vs 2024",
+        x =        "Disease",
+        y =        "Number of Treatments",
+        fill =     "Year"
+    ) +
+    theme_minimal(base_size = 14) +
+    theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+
+ggplotly(p) %>%
+  layout(
+    showlegend = FALSE,
+    dragmode = "zoom")
+
+```
+
+## Dashboard Shiny App
+
+[Age Distribution & Diseases Dashboard](https://jacobmullins.shinyapps.io/FlexDashboard/)
+
+## OBGYN deaths worldwide
+
+[OBGYN deaths worldwide - Shiny App](https://jacobmullins.shinyapps.io/OBGYNdeathrate/)
+
+## Ethiopia death rates by system
+
+```{r}
+knitr::include_graphics("ethiopia_deaths.gif")
+```
+
+## Systems treated by Gender
+
+```{r}
+suppressWarnings({library(ggplot2)})
+suppressWarnings({library(dplyr)})
+
+ETH<-read.csv("ETH2324.csv")
+
+ETH<-ETH%>% mutate(gender = recode(gender, '1' = 'Male', '0'="Female"))
+
+
+
+#Counts number of each group for bar plot
+grouped<-ETH %>% group_by (System, gender, year) %>%
+  summarise(count = n(), .groups ="drop")
+
+ggplot(grouped, aes (x=System, y=count, fill=gender))+
+  geom_bar(stat="identity", position=position_dodge())+
+  facet_wrap(~ year, scales = "free_x")+ #tried getting "systems" more readable
+  coord_flip()+ #flipped bars to horizontal for "systems" readability
+  labs(title="Treatment by System and Gender", 
+       x="System", y="Count", fill="Gender") + 
+  theme_classic() 
+
+```
