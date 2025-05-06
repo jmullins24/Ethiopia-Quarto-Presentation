@@ -15,7 +15,7 @@ These visualizations were used in their annual presentation to hospital donors a
 - <b>Flexdashboard</b>
 - <b>GGplot</b>
 - <b>GGanimate</b>
-- <b>Plotly</b>
+- <b>Plotly.js</b>
 - <b>Tableau</b>
 
 <h2>Walk-through:</h2>
@@ -34,26 +34,18 @@ Systems treated by the PAAV medical team versus the World Health Orginzation dea
 <img src="https://github.com/user-attachments/assets/0675caae-115a-48c0-a812-12ec1a31942e" height="80%" width="80%" alt="Systems treated v Death Rate"/>
 <br />
 <br />
-Select the employee in the drop-down to compare performance of each:  <br/>
-<img src="https://i.imgur.com/f1i0fVO.jpeg" height="80%" width="80%" alt="LO list"/>
+[Dashboard](https://jacobmullins.shinyapps.io/FlexDashboard/) in Shiny shows the top diseases treated in 2023 and 2024 (dumbell chart) with a slider to select the year:  <br/>
+<img src="https://github.com/user-attachments/assets/f2ae8317-88c9-4212-a3df-1b8184401251" height="80%" width="80%" alt="LO list"/>
 <br />
 <br />
-I created and tracked all of these metrics from scratch. These employee dashboards are still used today in employee evaluations and annual perfomance reviews. The data directs management to identify key training points, such as increasing loan application follow through or focusing production on new construction or HELOC loans over time.
+Age Distribution of Ethiopian patients with dropdown selector for the treatment category. To see the interactive version, go to the [dashboard](https://jacobmullins.shinyapps.io/FlexDashboard/)
 <br />
 <br />
-<img src="https://i.imgur.com/2XFXcI9.jpeg" height="80%" width="80%" alt="Comp employee"/>
+<img src="https://github.com/user-attachments/assets/8aa324ad-2c8a-4e03-8c16-0302ee6b084a" height="80%" width="80%" alt="Comp employee"/>
 <br />
 <br />
-Database tab is formatted to ensure Index Match Match function can locate all data easily:  <br/>
-<img src="https://i.imgur.com/oVPrIxM.jpeg" height="80%" width="80%" alt="Database"/>
+This Shiny App shows the change in OBGYN related deaths over time from 2000 to 2020. Colors represent the continents while bubble size represents total number of deaths. The y axis is death rate per 100k The full animation is hosted on https://jacobmullins.shinyapps.io/OBGYNdeathrate/:  <br/>
+<img src="https://github.com/user-attachments/assets/b1b09e9c-f00a-4213-be32-2708bbfb3fb9" height="80%" width="80%" alt="OBGYN Death Rate"/>
 <br />
 <br />
-VLOOKUP for automatically updating data in graphs:  <br/>
-<img src="https://i.imgur.com/SE4d1Xs.jpeg" height="80%" width="80%" alt="VLOOKUP"/>
-<br />
-<br />
-Calculated real production over time to track progress of the department:  <br/>
-<img src="https://i.imgur.com/UXZS54H.jpeg" height="80%" width="80%" alt="Scroll Wheel"/>
-<br />
-<br />
-This report is sent to the Board of Directors and Chief officers of the Bank each month. 
+This report was presented to donors, shareholders, and my Johns Hopkins class.
