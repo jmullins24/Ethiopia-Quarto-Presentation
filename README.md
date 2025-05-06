@@ -1,6 +1,4 @@
-# Ethiopia-Quarto-Presentation
-Use R programming, Shiny, Flexdashboard, GGplot, GGanimate 
-<h1>Data Visualization in a Quarto Presentation</h1>
+<h1>Sendafa Ethiopia Medical Mission Data Presentation</h1>
 
 <h2>Description</h2>
 I developed graphs, interactive dashboards, and data visualizations for a non-profit organization to extract and display insights for data gathered in their medical mission trips to Sendafa, Ethiopia.
@@ -44,7 +42,7 @@ Age Distribution of Ethiopian patients with dropdown selector for the treatment 
 <img src="https://github.com/user-attachments/assets/8aa324ad-2c8a-4e03-8c16-0302ee6b084a" height="80%" width="80%" alt="Comp employee"/>
 <br />
 <br />
-This Shiny App shows the change in OBGYN related deaths over time from 2000 to 2020. Colors represent the continents while bubble size represents total number of deaths. The y axis is death rate per 100k The full animation is hosted on https://jacobmullins.shinyapps.io/OBGYNdeathrate/:  <br/>
+This Shiny App shows the change in OBGYN related deaths over time from 2000 to 2020. Colors represent the continents while bubble size represents total number of deaths. The y axis is death rate per 100k. The interactive animation is hosted on https://jacobmullins.shinyapps.io/OBGYNdeathrate/:  <br/>
 <img src="https://github.com/user-attachments/assets/b1b09e9c-f00a-4213-be32-2708bbfb3fb9" height="80%" width="80%" alt="OBGYN Death Rate"/>
 <br />
 <br />
