@@ -28,7 +28,7 @@ By system category, what are the causes of death in Ethiopia over time:  <br/>
 <img src="https://github.com/user-attachments/assets/c59c5056-1d91-43d5-a1e2-d90964e8e3ef" height="80%" width="80%" alt="LO Dashboard"/>
 <br />
 <br />  
-Systems treated by the PAAV medical team versus the World Health Orginzation death rate data  <br/>
+Systems treated by the PAAV medical team versus the World Health Organization death rate data  <br/>
 <img src="https://github.com/user-attachments/assets/0675caae-115a-48c0-a812-12ec1a31942e" height="80%" width="80%" alt="Systems treated v Death Rate"/>
 <br />
 <br />
