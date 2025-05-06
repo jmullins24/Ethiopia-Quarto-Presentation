@@ -8,7 +8,8 @@ These visualizations were used in their annual presentation to hospital donors a
 
 <h2>Languages and Utilities Used</h2>
 
-- <b>R</b> 
+- <b>R</b>
+- <b>Quarto</b> 
 - <b>Shiny</b>
 - <b>Flexdashboard</b>
 - <b>GGplot</b>
