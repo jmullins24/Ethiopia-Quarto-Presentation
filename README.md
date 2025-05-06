@@ -19,6 +19,7 @@ These visualizations were used in their annual presentation to hospital donors a
 - <b>Tableau</b>
 
 <h2>Walk-through:</h2>
+![ethiopia_deaths](https://github.com/user-attachments/assets/17ceb87b-e7e1-4700-8355-5f42732973f8)
 
 <p align="center">
 Quarto Presentation Title Page in the .html file: <br/>
